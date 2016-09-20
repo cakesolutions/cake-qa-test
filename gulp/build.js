@@ -2,6 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
+var ghPages = require('gulp-gh-pages');
 var conf = require('./conf');
 
 var $ = require('gulp-load-plugins')({
@@ -95,3 +96,8 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', ['html', 'fonts', 'other']);
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
