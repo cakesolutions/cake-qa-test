@@ -1,22 +1,25 @@
 # cake-qa-test
 
-# Dev Tool
+# Dev Tools
 
-Build commands:
+This app was build using a Yeoman generator and contains a simple SPA written in Angular 1.5, the app is to be used as part of the Automation Tester interview process.  The app contains several bugs and but should be a simple task task for someone to write an automation suite against it. 
 
-```gulp```
+## Build commands:
 
-Local testing
-```gulp serve```
+### Compile and package
+`gulp build`
 
-Local testing with built assets
-```gulp serve:dist```
+### Local testing
+`gulp serve`
 
-Run unit tests
-```gulp test```
+### Local testing with built assets
+`gulp serve:dist`
 
-Run E2E test
-```gulp protractor```
+### Run unit tests
+`gulp test`
 
-deploy to github pages
-``` gulp deploy ```
+### Run E2E test
+`gulp protractor`
+
+### Deploy to github pages
+` gulp deploy `
