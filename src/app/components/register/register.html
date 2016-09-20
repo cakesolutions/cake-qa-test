@@ -1,0 +1,55 @@
+
+<div ng-if="register.registrationComplete==true">
+  <div class="well text-center">
+    <h2>Congrats !!</h2>
+  </div>
+  <div class=" text-center">
+    <h3>
+      Registration Complete, welcome to the Cake Solutions QA tester site!
+    </h3>
+  </div>
+  <div class=" text-center">
+    <a class="btn btn-lg btn-success" href="#/">Continue</a>
+  </div>
+
+</div>
+<div id="signup" ng-if="register.registrationComplete==false">
+    <div class="signup-screen">
+      <div class="well text-center">
+        <h2>Registration</h2>
+        <div class="divider"></div>
+      </div>
+      <form name="registerForm" ng-submit="registerForm.$valid && register.register(registerForm)" role="form" novalidate>
+          <div class="form-group" ng-class="{ 'has-error': registerForm.firstName.$dirty && registerForm.firstName.$error.required }">
+              <label for="firstName">First name *</label>
+              <input type="text" name="firstName" id="firstName" class="form-control" ng-model="register.user.firstName" required />
+              <span ng-show="registerForm.firstName.$dirty && registerForm.firstName.$error.required" class="help-block">First name is required</span>
+              <span ng-show="registerForm.firstName.$dirty && registerForm.firstName.$error.randomError" class="help-block">First name has a crazy max length validation, this was not in the requireents.</span>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': registerForm.lastName.$dirty && registerForm.lastName.$error.required }">
+              <label for="lastName">Last name *</label>
+              <input type="text" name="lastName" id="lastName" class="form-control" ng-model="register.user.lastName" required />
+              <span ng-show="registerForm.lastName.$dirty && registerForm.lastName.$error.required" class="help-block">Last name is required</span>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': registerForm.email.$dirty && registerForm.email.$error.required }">
+              <label for="email">Email *</label>
+              <input type="text" name="email" id="email" class="form-control" ng-model="register.user.email" required />
+              <span ng-show="registerForm.email.$dirty && registerForm.email.$error.required" class="help-block">Email is required</span>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': registerForm.password.$dirty && registerForm.password.$error.required }">
+              <label for="password">Password *</label>
+              <input type="password" name="password" id="password" class="form-control" ng-model="register.user.password" required />
+              <span ng-show="registerForm.password.$dirty && registerForm.password.$error.required" class="help-block">Password is required</span>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': registerForm.passwordConfim.$dirty && registerForm.passwordConfim.$error.required }">
+              <label for="passwordConfim">Re-enter Password *</label>
+              <input type="password" name="passwordConfim" id="passwordConfirm" class="form-control" ng-model="register.user.passwordConfim" required />
+              <span ng-show="registerForm.passwordConfim.$dirty && registerForm.passwordConfim.$error.required" class="help-block">Password is required</span>
+          </div>
+          <div class="form-actions">
+              <button type="submit" ng-disabled="registerForm.$invalid" class="btn btn-lg btn-primary">Register</button>
+              <a href="#/" class="btn btn-lg btn-link">Cancel</a>
+          </div>
+      </form>
+    </div>
+  </div>
