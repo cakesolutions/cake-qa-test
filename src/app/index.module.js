@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('cakeQaTest', ['ngResource', 'ngRoute', 'ui.bootstrap', 'toastr']);
+    .module('cakeQaTest', ['ngResource', 'ngRoute', 'ui.bootstrap']);
 
 })();
